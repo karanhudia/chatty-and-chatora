@@ -72,3 +72,7 @@ section {
     padding: 5px;
     border: 2px solid;
 }
+
+.primary-button.selected {
+  background: seagreen;
+}

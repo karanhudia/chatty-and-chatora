@@ -14,7 +14,7 @@ const App: React.FC = () => {
         Welcome to chatty and chatora!
       </header>
       <div className="settings-bar">
-        <div className="primary-button" onClick={() => setReverse(true)}>Reverse</div>
+        <div className={`${reverse ? "selected " : ""}primary-button`} onClick={() => setReverse(!reverse)}>Reverse</div>
       </div>
         <section>
             {reverse ? <ReverseTextInput onChange={(t) => setOutputText(t)}/> : <TextInput onChange={(t) => setOutputText(t)}/>}
