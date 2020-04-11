@@ -8,6 +8,7 @@ const ReverseTextInput = ({onChange}) => {
         const regex1 = /([a-zA-Z]+)\s{1}([A-Z]+),/gm;
         const regex2 = /,\s([a-zA-Z]+)\s([A-Z]+)\s(\(\d{4}[a-z]?\))/gm;
         const regex3 = /(\(\d{4}\))\s/gm;
+        const regex4 = /^([a-zA-Z]+)\s{1}([A-Z]+) /gm;
 
         count += text.match(regex1).length;
         let output = text.replace(regex1, (match, firstName, lastName) => `${firstName}, ${lastName.split('').join('. ')}.,`);
@@ -17,6 +18,9 @@ const ReverseTextInput = ({onChange}) => {
 
         count +=output.match(regex3).length;
         output = output.replace(regex3, "$1: ");
+
+        count +=output.match(regex4).length;
+        output = output.replace(regex4, (match, firstName, lastName) => `${firstName}, ${lastName.split('').join('. ')}.`);
 
         onChange(output)
 
