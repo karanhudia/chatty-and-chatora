@@ -20,13 +20,7 @@ section {
   display: flex;
 }
 
-.text-input {
-  width: 100%;
-  margin-right: 5px;
-  border: 2px solid cornflowerblue;
-}
-
-.text-output {
+.text-input, .text-output {
   width: 100%;
   margin-left: 5px;
   border: 2px solid cornflowerblue;
